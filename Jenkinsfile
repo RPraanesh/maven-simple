@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    def mvnHome = tool 'maven'
+                    def mvnHome = tool 'Maven'
                 }
             }
         }
@@ -16,7 +16,7 @@ pipeline {
                 script {
                    
                     checkout scm
-                    def mvnHome = tool 'maven'
+                    def mvnHome = tool 'Maven'
                     try {
                         sh "mvn clean install -U -Dmaven.test.skip=true"
                         currentBuild.result = 'SUCCESS'
